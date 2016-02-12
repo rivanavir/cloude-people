@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+	<title>INSPINIA | My Labs</title>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+	<link href="css/plugins/summernote/summernote.css" rel="stylesheet">
+	<link href="css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
+	<link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+	<link href="css/animate.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+	<style>
+		.select-wrap{
+			width: 100%;
+			height: 120px;
+			border: 1px solid #e5e6e7;
+			padding: 5px;
+			background: white;
+		}
+		.select-wrap select{
+			width: 100%;
+			height: 100%;
+			border:0 solid transparent;
+			background-color: transparent;
+			overflow: auto !important;
+		}
+		.select-wrap select option:focus{
+			background-color: red;
+		}
+		.select-wrap select[size]::-webkit-scrollbar,
+		.select-wrap select[size]::-moz-scrollbar,
+		.select-wrap select[size]::-o-scrollbar{
+			display: none;
+		}
+		.select-wrap select:hover,
+		.select-wrap select:focus{
+			outline: 0;
+		}
+		.select-wrap {position: relative;}
+		.arrow-wrap{
+			position: absolute;
+			right: -22px;
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			-moz-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			-o-transform: translateY(-50%);
+			transform: translateY(-50%);
+			z-index: 500;
+		}
+		.arrow-wrap p:last-child{margin: 0;}
+		.arrow-wrap a{
+			color: inherit;
+			cursor: pointer;
+			font-size: 20px;
+		}
+		.arrow-wrap-mbl{
+			display: none;
+			position: absolute;
+			right: -30px;
+			bottom: -45px;
+			-webkit-transform: translateX(-50%);
+			-moz-transform: translateX(-50%);
+			-ms-transform: translateX(-50%);
+			-o-transform: translateX(-50%);
+			transform: translateX(-50%);
+			z-index: 500;
+		}
+		.arrow-wrap-mbl a{
+			display: inline-block;
+			margin: 0 10px;
+			font-size: 20px;
+			color:inherit;
+		}
+		table.custom-tbl tr th{border: 0;}
+		table.custom-tbl tr td{
+			vertical-align: middle;
+			border: 0;
+			padding: 4px 8px;
+		}
+		table.custom-tbl tr td label{margin: 0;}
+		table.custom-tbl tr td .fa-trash{
+			color: #1ab394;
+			font-size: 30px;
+		}
+		table.custom-tbl tr td .fa-trash:hover{
+			color: ##18a689;
+			text-shadow:0 0 2px rgba(0,0,0,.4);
+		}
+		.custom-drop{
+			padding: 10px;
+		}
+		.custom-drop li a{
+			padding: 0;
+		}
+		@media (max-width: 768px) {
+			.select-wrap{margin-bottom: 15px;}
+			.arrow-wrap{display: none;}
+			.arrow-wrap-mbl{display: block;}
+		}
+	</style>
+</head>
+<body class="boxed-layout">
+
+	<div id="wrapper">
+
+		<nav class="navbar-default navbar-static-side" role="navigation">
+			<div class="sidebar-collapse">
+				<ul class="nav" id="side-menu">
+					<li class="nav-header">
+						<div class="dropdown profile-element"> <span>
+								<img alt="image" class="img-circle" src="img/profile_small.jpg" />
+								 </span>
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
+								 </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span> </a>
+							<ul class="dropdown-menu animated fadeInRight m-t-xs custom-drop">
+								<li><label><input type="radio" name="profDrop"> Administrator</label></li>
+								<li><label><input type="radio" name="profDrop"> Author</label></li>
+								<li><label><input type="radio" name="profDrop"> Manager</label></li>
+								<li><label><input type="radio" name="profDrop"> Leaner</label></li>
+								<li class="divider"></li>
+								<li><a href="#">Profile</a></li>
+								<li><a href="#">Help</a></li>
+								<li><a href="#">Sign Out</a></li>
+							</ul>
+						</div>
+						<div class="logo-element">
+							IN+
+						</div>
+					</li>
+					<li>
+						<a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span></a>
+					</li>
+					<li>
+						<a href="my_labs.html"><i class="fa fa-flask"></i> <span class="nav-label">My Labs</span></a>
+					</li>
+					<li>
+						<a href="library.html"><i class="fa fa-book"></i> <span class="nav-label">Library</span></a>
+					</li>
+					<li>
+						<a href="profile.html"><i class="fa fa-user"></i> <span class="nav-label">Profile</span></a>
+					</li>
+					<li class="active">
+						<a href="mailbox.html"><i class="fa fa-gears"></i> <span class="nav-label">Administration</span><span class="fa arrow"></span></a>
+						<ul class="nav nav-second-level collapse">
+							<li><a href="contacts.html">Companies</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div id="page-wrapper" class="gray-bg">
+			<div class="row border-bottom">
+				<nav class="navbar navbar-static-top  " role="navigation" style="margin-bottom: 0">
+					<div class="navbar-header">
+						<a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+					</div>
+					<ul class="nav navbar-top-links navbar-right">
+						<li>
+							<a href="login.html">
+								<i class="fa fa-sign-out"></i> Log out
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="row wrapper border-bottom white-bg page-heading">
+				<div class="col-sm-12">
+					<h2>Sections Details Page</h2>
+					<ol class="breadcrumb">
+						<li>
+							<a href="index.html">breadcrumb1</a>
+						</li>
+						<li class="active">
+							<strong>breadcrumb2</strong>
+						</li>
+					</ol>
+				</div>
+			</div>
+			<div class="wrapper wrapper-content animated fadeIn">
+				<div class="row">
+					<div class="col-lg-8">
+						<div class="tabs-wrap">
+							<ul class="nav nav-tabs">
+								<li class="active"><a data-toggle="tab" href="#tab-1">Details</a></li>
+								<li class="" ass=""><a data-toggle="tab" href="#tab-2">Consoles</a></li>
+								<li class="" ass=""><a data-toggle="tab" href="#tab-3">Controls</a></li>
+							</ul>
+							<div class="ibox-content">
+								<div class="tab-content">
+									<div id="tab-1" class="tab-pane ibox float-e-margins active">
+										<form role="form">
+											<div class="form-group">
+												<label>Name</label>
+												<input type="text" placeholder="Configuring Server 2012" class="form-control">
+											</div>
+											<div class="form-group">
+												<label>Type</label>
+												<select name="" id="" class="form-control">
+													<option value="">Cloudstack</option>
+													<option value="">Cloudstack1</option>
+													<option value="">Cloudstack2</option>
+													<option value="">Cloudstack3</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label>Machine type</label>
+												<select name="" id="" class="form-control">
+													<option value="">HyperV</option>
+													<option value="">HyperV1</option>
+													<option value="">HyperV2</option>
+													<option value="">HyperV3</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label>Network ID</label>
+												<input type="text" placeholder="12345" class="form-control">
+											</div>
+											<div class="form-group">
+												<label>Zone ID</label>
+												<input type="text" placeholder="12345" class="form-control">
+											</div>
+											<div class="form-group">
+												<label>Service Offering ID</label>
+												<input type="text" placeholder="12345" class="form-control">
+											</div>
+											<div class="form-group">
+												<label>Template ID</label>
+												<input type="text" placeholder="12345" class="form-control">
+											</div>
+											<div class="form-group">
+												<table class="table custom-tbl">
+													<thead>
+														<tr>
+															<th><label>VM display name</label></th>
+															<th><label>VM ID</label></th>
+															<th><label>Enhanced</label></th>
+															<th></th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><input type="text" placeholder="12345" class="form-control"></td>
+															<td><input type="text" placeholder="12345" class="form-control"></td>
+															<td class="text-center"><input type="checkbox" class="i-checks"></td>
+															<td class="text-center"><a href="#" class="fa fa-trash"></a></td>
+														</tr>
+														<tr>
+															<td><input type="text" placeholder="12345" class="form-control"></td>
+															<td><input type="text" placeholder="12345" class="form-control"></td>
+															<td class="text-center"><input type="checkbox" class="i-checks"></td>
+															<td class="text-center"><a href="#" class="fa fa-trash"></a></td>
+														</tr>
+														<tr>
+															<td><input type="text" placeholder="12345" class="form-control"></td>
+															<td><input type="text" placeholder="12345" class="form-control"></td>
+															<td class="text-center"><input type="checkbox" class="i-checks"></td>
+															<td class="text-center"><button href="#" class="btn btn-sm btn-primary">Add</button></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</form>
+									</div>
+									<div id="tab-2" class="tab-pane">
+										<p>Select the consoles available in this section</p>
+										<div class="row">
+											<div class="col-sm-6">
+												<p><label>Inactive Consoles</label></p>
+												<div class="select-wrap with-arrow">
+													<div class="arrow-wrap">
+														<p><a class="fa fa-chevron-right"></a></p>
+														<p><a class="fa fa-chevron-left"></a></p>
+													</div>
+													<div class="arrow-wrap-mbl">
+														<p><a class="fa fa-chevron-down"></a><a class="fa fa-chevron-up"></a></p>
+													</div>
+													<select id="inCons" size="4" multiple>
+														<option>HyperV Console</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<p><label>Inactive HyperV Guests</label></p>
+												<div class="select-wrap">
+													<select id="inHyGuest" size="4" multiple>
+														<option>SVR-DC-A</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<br>
+										<div class="row">
+											<div class="col-sm-6">
+												<p><label>Active Consoles</label></p>
+												<div class="select-wrap with-arrow">
+													<div class="arrow-wrap">
+														<p><a class="fa fa-chevron-right"></a></p>
+														<p><a class="fa fa-chevron-left"></a></p>
+													</div>
+													<div class="arrow-wrap-mbl">
+														<p><a class="fa fa-chevron-down"></a><a class="fa fa-chevron-up"></a></p>
+													</div>
+													<select id="actCons" size="4" multiple>
+														<option>Windows 8 Console</option>
+														<option>Windows 10 Console</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<p><label>Active HyperV Guests</label></p>
+												<div class="select-wrap">
+													<select id="actHyGuest" size="4" multiple>
+														<option>SVR-DC-B</option>
+														<option>SVR-DC-C</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="tab-3" class="tab-pane">
+										<p>Select the controls available in this section</p>
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="checkbox i-checks"><label> <input type="checkbox"><i></i> ctrl+alt+del</label></div>
+												<div class="checkbox i-checks"><label> <input type="checkbox"><i></i> Open Charms</label></div>
+												<div class="checkbox i-checks"><label> <input type="checkbox"><i></i> Windows key</label></div>
+												<div class="checkbox i-checks"><label> <input type="checkbox"><i></i> Control 4</label></div>
+											</div>
+											<div class="col-sm-6">
+												<div class="checkbox i-checks"><label> <input type="checkbox"><i></i> Control 5</label></div>
+												<div class="checkbox i-checks"><label> <input type="checkbox"><i></i> Control 6</label></div>
+												<div class="checkbox i-checks"><label> <input type="checkbox"><i></i> Control 7</label></div>
+												<div class="checkbox i-checks"><label> <input type="checkbox"><i></i> Control 8</label></div>
+											</div>
+										</div>
+										<p>Select the special controls available in this section</p>
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="checkbox i-checks"><label> <input type="checkbox"><i></i> Control 9</label></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="ibox float-e-margins">
+							<div class="ibox-title">
+								<h5>Options</h5>
+							</div>
+							<div class="ibox-content">
+								<button type="button" class="btn btn-primary btn-block">Action 1</button>
+								<button type="button" class="btn btn-primary btn-block">Action 2</button>
+							</div>
+						</div>
+						<div class="ibox float-e-margins">
+							<div class="ibox-title">
+								<h5>Information</h5>
+							</div>
+							<div class="ibox-content">
+								<p><b>Information 1: </b>Details</p>
+								<p><b>Information 2: </b>Details</p>
+								<p><b>Information 3: </b>Details</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="pull-right">
+					10GB of <strong>250GB</strong> Free.
+				</div>
+				<div>
+					<strong>Copyright</strong> Example Company &copy; 2014-2015
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="modal inmodal" id="createSection" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content animated flipInY">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title text-left">Create section</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-lg-12">
+							<form role="form">
+								<div class="form-group">
+									<label>Title</label>
+									<input type="text" placeholder="" class="form-control">
+								</div>
+								<div class="form-group">
+									<label>Section code</label>
+									<input type="text" placeholder="" class="form-control">
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-primary">Create</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Mainly scripts -->
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+	<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+	<!-- Custom and plugin javascript -->
+	<script src="js/inspinia.js"></script>
+	<script src="js/plugins/pace/pace.min.js"></script>
+
+	<script src="js/plugins/summernote/summernote.min.js"></script>
+	<script src="js/plugins/iCheck/icheck.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			$('.summernote').summernote();
+		});
+		var edit = function() {
+			$('.click2edit').summernote({focus: true});
+		};
+		var save = function() {
+			var aHTML = $('.click2edit').code(); //save HTML If you need(aHTML: array).
+			$('.click2edit').destroy();
+		};
+		$('.i-checks').iCheck({
+			checkboxClass: 'icheckbox_square-green',
+			radioClass: 'iradio_square-green',
+		});
+	</script>
+</body>
+
+</html>

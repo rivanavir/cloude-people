@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+	<title>INSPINIA | My Labs</title>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+	<link href="css/animate.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="boxed-layout">
+
+	<div id="wrapper">
+
+		<nav class="navbar-default navbar-static-side" role="navigation">
+			<div class="sidebar-collapse">
+				<ul class="nav" id="side-menu">
+					<li class="nav-header">
+						<div class="dropdown profile-element"> <span>
+								<img alt="image" class="img-circle" src="img/profile_small.jpg" />
+								 </span>
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+								<span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
+								 </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span> </a>
+							<ul class="dropdown-menu animated fadeInRight m-t-xs">
+								<li><a href="login.html">Logout</a></li>
+							</ul>
+						</div>
+						<div class="logo-element">
+							IN+
+						</div>
+					</li>
+					<li>
+						<a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span></a>
+					</li>
+					<li>
+						<a href="my_labs.html"><i class="fa fa-flask"></i> <span class="nav-label">My Labs</span></a>
+					</li>
+					<li>
+						<a href="library.html"><i class="fa fa-book"></i> <span class="nav-label">Library</span></a>
+					</li>
+					<li>
+						<a href="profile.html"><i class="fa fa-user"></i> <span class="nav-label">Profile</span></a>
+					</li>
+					<li class="active">
+						<a href="mailbox.html"><i class="fa fa-gears"></i> <span class="nav-label">Administration</span><span class="fa arrow"></span></a>
+						<ul class="nav nav-second-level collapse">
+							<li><a href="contacts.html">Companies</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div id="page-wrapper" class="gray-bg">
+			<div class="row border-bottom">
+				<nav class="navbar navbar-static-top  " role="navigation" style="margin-bottom: 0">
+					<div class="navbar-header">
+						<a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+					</div>
+					<ul class="nav navbar-top-links navbar-right">
+						<li>
+							<a href="login.html">
+								<i class="fa fa-sign-out"></i> Log out
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="row wrapper border-bottom white-bg page-heading">
+				<div class="col-sm-12">
+					<h2>Example Details Page</h2>
+					<ol class="breadcrumb">
+						<li>
+							<a href="index.html">breadcrumb1</a>
+						</li>
+						<li class="active">
+							<strong>breadcrumb2</strong>
+						</li>
+					</ol>
+				</div>
+			</div>
+			<div class="wrapper wrapper-content animated fadeIn">
+				<div class="row">
+					<div class="col-lg-8">
+						<div class="tabs-wrap">
+							<ul class="nav nav-tabs">
+								<li class="active"><a data-toggle="tab" href="#tab-1">Details</a></li>
+								<li class="" ass=""><a data-toggle="tab" href="#tab-2">Sections</a></li>
+							</ul>
+							<div class="ibox-content">
+								<div class="tab-content">
+									<div id="tab-1" class="tab-pane ibox float-e-margins active">
+										<form role="form">
+											<div class="form-group">
+												<label>Title</label>
+												<input type="text" placeholder="Configuring Server 2012" class="form-control">
+											</div>
+											<div class="form-group">
+												<label>Course Code</label>
+												<input type="text" placeholder="MS-70-410" class="form-control">
+											</div>
+											<div class="form-group">
+												<label>Description</label>
+												<textarea placeholder="This is where the description of the course goes." class="form-control" rows="5" cols="5"></textarea>
+											</div>
+											<button type="button" class="btn btn-primary">Save changes</button>
+										</form>
+									</div>
+									<div id="tab-2" class="tab-pane">
+										<div class="ibox-content">
+											<p class="m-b-lg">Drag and drop to rearrange the order.</p>
+											<div class="dd" id="nestable">
+												<ol class="dd-list">
+													<li class="dd-item" data-id="1">
+														<div class="dd-handle">Section Name</div>
+														<div class="input-group m-b" style="position:absolute;right:0;top:0;">
+															<div class="input-group-btn pull-right">
+																<button style="padding:0 10px 0 0;background-color:transparent;line-height:30px;border-color:transparent;" data-toggle="dropdown" class="btn btn-white dropdown-toggle pull-right" type="button">Action <span class="caret"></span></button>
+																<ul class="dropdown-menu">
+																	<li><a href="#">View</a></li>
+																	<li><a href="#">Modify</a></li>
+																	<li><a href="#">Disable</a></li>
+																</ul>
+															</div>
+														</div>
+														<ol class="dd-list">
+															<li class="dd-item" data-id="2">
+																<div class="dd-handle">Exercise Name</div>
+															</li>
+															<li class="dd-item" data-id="3">
+																<div class="dd-handle">Next Exercise Name</div>
+															</li>
+														</ol>
+													</li>
+													<li class="dd-item" data-id="4">
+														<div class="input-group m-b" style="position:absolute;right:0;top:0;">
+															<div class="input-group-btn pull-right">
+																<button style="padding:0 10px 0 0;background-color:transparent;line-height:30px;border-color:transparent;" data-toggle="dropdown" class="btn btn-white dropdown-toggle pull-right" type="button">Action <span class="caret"></span></button>
+																<ul class="dropdown-menu">
+																	<li><a href="#">View</a></li>
+																	<li><a href="#">Modify</a></li>
+																	<li><a href="#">Disable</a></li>
+																</ul>
+															</div>
+														</div>
+														<div class="dd-handle">Next Section Name</div>
+														<ol class="dd-list">
+															<li class="dd-item" data-id="5">
+																<div class="dd-handle">Exercise Name</div>
+															</li>
+															<li class="dd-item" data-id="6">
+																<div class="dd-handle">Next Exercise Name</div>
+															</li>
+														</ol>
+													</li>
+													<li class="dd-item" data-id="7">
+														<div class="input-group m-b" style="position:absolute;right:0;top:0;">
+															<div class="input-group-btn pull-right">
+																<button style="padding:0 10px 0 0;background-color:transparent;line-height:30px;border-color:transparent;" data-toggle="dropdown" class="btn btn-white dropdown-toggle pull-right" type="button">Action <span class="caret"></span></button>
+																<ul class="dropdown-menu">
+																	<li><a href="#">View</a></li>
+																	<li><a href="#">Modify</a></li>
+																	<li><a href="#">Disable</a></li>
+																</ul>
+															</div>
+														</div>
+														<div class="dd-handle">Last Section Name</div>
+														<ol class="dd-list">
+															<li class="dd-item" data-id="8">
+																<div class="dd-handle">Exercise Name</div>
+															</li>
+															<li class="dd-item" data-id="9">
+																<div class="dd-handle">Next Exercise Name</div>
+															</li>
+														</ol>
+													</li>
+												</ol>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="ibox float-e-margins">
+							<div class="ibox-title">
+								<h5>Options</h5>
+							</div>
+							<div class="ibox-content">
+								<button type="button" class="btn btn-primary btn-block">New Section</button>
+								<button type="button" class="btn btn-primary btn-block">Action</button>
+							</div>
+						</div>
+						<div class="ibox float-e-margins">
+							<div class="ibox-title">
+								<h5>Information</h5>
+							</div>
+							<div class="ibox-content">
+								<p><b>Status: </b>Published</p>
+								<p><b>Last Modified: </b>23/4/2015</p>
+								<p><b>Enrolments: </b>3256</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="pull-right">
+					10GB of <strong>250GB</strong> Free.
+				</div>
+				<div>
+					<strong>Copyright</strong> Example Company &copy; 2014-2015
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Mainly scripts -->
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+	<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+	<!-- Nestable List -->
+	<script src="js/plugins/nestable/jquery.nestable.js"></script>
+
+	<!-- Custom and plugin javascript -->
+	<script src="js/inspinia.js"></script>
+	<script src="js/plugins/pace/pace.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			var updateOutput = function (e) {
+					var list = e.length ? e : $(e.target),
+									output = list.data('output');
+					if (window.JSON) {
+							output.val(window.JSON.stringify(list.nestable('serialize')));//, null, 2));
+					} else {
+							output.val('JSON browser support required for this demo.');
+					}
+			};
+			// activate Nestable for list 1
+			$('#nestable').nestable({
+					group: 1
+			}).on('change', updateOutput);
+
+			// activate Nestable for list 2
+			$('#nestable2').nestable({
+					group: 1
+			}).on('change', updateOutput);
+
+			// output initial serialised data
+			updateOutput($('#nestable').data('output', $('#nestable-output')));
+			updateOutput($('#nestable2').data('output', $('#nestable2-output')));
+
+			$('#nestable-menu').on('click', function (e) {
+					var target = $(e.target),
+									action = target.data('action');
+					if (action === 'expand-all') {
+							$('.dd').nestable('expandAll');
+					}
+					if (action === 'collapse-all') {
+							$('.dd').nestable('collapseAll');
+					}
+			});
+		});
+	</script>
+</body>
+
+</html>
